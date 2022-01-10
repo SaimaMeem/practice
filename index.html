@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transform, Transition and Animation</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+      section {
+        display: flex;
+        animation: section-scale infinite 3s alternate;
+      }
+      .rec {
+        width: 10px;
+        position: relative;
+        top: 120px;
+      }
+      #first {
+        height: 300px;
+        background-color: #3959ff;
+        left: 280px;
+        z-index: 10;
+      }
+      #second {
+        background-color: #192c8f;
+        top: 120px;
+        left: 270px;
+        height: 310px;
+        transform: rotate(-18deg);
+        transform-origin: top left;
+        z-index: 2;
+      }
+      #third {
+        background-color: #3959ff;
+        top: 125px;
+        left: 455px;
+        height: 310px;
+        transform: rotate(19deg);
+        transform-origin: top right;
+        z-index: 6;
+      }
+      #fourth {
+        height: 300px;
+        background-color: #192c8f;
+        left: 445px;
+        z-index: 5;
+      }
+
+      h1 {
+        margin-left: 60px;
+        transition: color 0.5s ease-in 0.1s;
+        color: #3959ff;
+      }
+      h1:hover {
+        color: #192c8f;
+      }
+
+      @keyframes section-scale {
+        from {
+          transform: scale(0.5);
+        }
+        to {
+          transform: scale(1);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Transition</h1>
+    <section>
+      <div class="rec" id="first"></div>
+      <div class="rec" id="second"></div>
+      <div class="rec" id="third"></div>
+      <div class="rec" id="fourth"></div>
+    </section>
+  </body>
+</html>
